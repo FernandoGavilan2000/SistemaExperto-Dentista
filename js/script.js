@@ -31,7 +31,13 @@ let userAnswer={
     HiloDental:'',
     Encias:'',
     CepillaSangre:'',
-    MalAliento:''
+    MalAliento:'',
+    Mordida:'',
+    Apinados:'',
+    DolorMasticar:'',
+    DolorMusculosFaciales:'',
+    Sarro:'',
+    MovilidadDental:''
 }
 //Creacion del Objeto que almacenara los resultados del diagnostico.
 let userDiagnostic=[];
@@ -194,11 +200,11 @@ const addDiagnostic= (data) =>{
 
 
 const analize = () => {
-//------------------------------------------ CARIES ------------------------------------------------------------------//
-//Regla 1 --  Caries__Estadio_Avanzado
+//------------------------------------------ CARIES --------------------------------------------------------------//
+//Regla 1 --  Detectar Caries__Estadio_Avanzado x Imagenes
 if(userAnswer.Punto==Answers.high && userAnswer.Dolor.high==Answers.high)
     addDiagnostic({'categoria':'caries','diagnostico':enfermedades.cariesAvanzado});
-//Regla 2 -- Caries__Estadio_Inicial
+//Regla 2 -- Detectar Caries__Estadio_Inicial x Imagenes
 if(userAnswer.Punto==Answers.moderate)
     addDiagnostic({'categoria':'caries','diagnostico':enfermedades.cariesInicial});
 //Regla 3 --  Caries__EnDesarrollo x Malos Habitos1
@@ -210,21 +216,60 @@ if(userAnswer.Visitas==Answers.low && userAnswer.Azucarados==Answers.always && u
 
 //--------------------------------------- GINGIVITIS --------------------------------------------------------------//
 //Regla 5 --  Gingivitis_Sintomas1
-if(userAnswer.Encias==Answers.high && userAnswer.CepillaSangre==Answers.si && userAnswer.MalAliento==Answers.si)
+if(userAnswer.Encias==Answers.moderate && userAnswer.CepillaSangre==Answers.si && userAnswer.MalAliento==Answers.si)
     addDiagnostic({'categoria':'gingivitis','diagnostico':enfermedades.gingivitis});
 //Regla 6 --  Gingivitis_Sintomas2
-if(userAnswer.Encias==Answers.high && userAnswer.CepillaSangre==Answers.si && userAnswer.MalAliento==Answers.no)
+if(userAnswer.Encias==Answers.moderate && userAnswer.CepillaSangre==Answers.si && userAnswer.MalAliento==Answers.no)
     addDiagnostic({'categoria':'gingivitis','diagnostico':enfermedades.gingivitis});
 
 //-------------------------------------- MALOCLUSION -------------------------------------------------------------//
-//Regla 7 --  Maloclusion_Sintomas
+//Regla 7 --  Detectar Maloclusion_Clase1 x Imagenes
+if(userAnswer.Mordida==Answers.clase1 && userAnswer.Apinados==Answers.si)
+    addDiagnostic({'categoria':'maloclusion','diagnostico':enfermedades.maloclusion1});
+//Regla 8 --  Detectar Maloclusion_Clase2 x Imagenes
+if(userAnswer.Mordida==Answers.clase2)
+    addDiagnostic({'categoria':'maloclusion','diagnostico':enfermedades.maloclusion2});
+//Regla 9 --  Detectar Maloclusion_Clase3 x Imagenes
+if(userAnswer.Mordida==Answers.clase3)
+    addDiagnostic({'categoria':'maloclusion','diagnostico':enfermedades.maloclusion3});
+//Regla 10 --  Detectar Maloclusion x Sintomas1
+if(userAnswer.Apinados==Answers.si)
+    addDiagnostic({'categoria':'maloclusion','diagnostico':enfermedades.maloclusion});
+//Regla 11 --  Detectar Maloclusion x Sintomas2
+if(userAnswer.DolorMasticar==Answers.si && userAnswer.DolorMusculosFaciales==Answers.si)
+    addDiagnostic({'categoria':'maloclusion','diagnostico':enfermedades.maloclusion});
+
+//--------------------------------------- PERIODINTITIS --------------------------------------------------------//
+//Regla 12 -- Periodontitis Avanzada Sintomas 
+if(userAnswer.MovilidadDental==Answers.si && userAnswer.Encias==Answers.high && userAnswer.Sarro==Answers.si && userAnswer.MalAliento==Answers.si)
+    addDiagnostic({'categoria':'periodontitis','diagnostico':enfermedades.periodontitisAvanzada});
+//Regla 13 -- Periodontitis Sintomas 
+if(userAnswer.Encias==Answers.high && userAnswer.Sarro==Answers.si && userAnswer.MalAliento==Answers.si)
+    addDiagnostic({'categoria':'periodontitis','diagnostico':enfermedades.periodontitis});
+
+//------------------------------------------ ABSCESO -----------------------------------------------------------//
+//Regla 14 -- Periodontitis Sintomas 
+
+
+
+//--------------------------------------- CANCER BUCAL --------------------------------------------------------//
+
+
+
+
+//--------------------------------------- BUENA SALUD DENTAL --------------------------------------------------//
 
 
 
 
 
 
-//Regla Final(No se encontro ninguna enfermedad)
+
+
+
+
+//-------------------------------------- SIN RESULTADOS -------------------------------------------------------//
+//Regla 25 (No se encontro ninguna enfermedad)
 if(userDiagnostic.length==0)
     console.info("El programa no encontro una solucion");
 }

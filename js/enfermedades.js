@@ -52,7 +52,51 @@ let enfermedades={
         advices:[
             "Ortodoncia interceptiva (niños)",
             "Ortodoncia Correctiva(adultos)",
-            "Cirugia Ortognatica(casos avanzados)",
+        ]
+    },
+    maloclusion1:{
+        name:"Maloclusion Clase I",
+        image:"  ",
+        description:"Es la incorrecta alineación de los dientes,el paciente presenta una diferencia de tamaño entre mandíbulas o entre mandíbula y diente.Hay casos en la cual el maxilar superior es muy pequeño para alvergar todos los dientes en las cuales deben ir en este tren superior.",
+        advices:[
+            "Ortodoncia interceptiva (niños)",
+            "Ortodoncia Correctiva(adultos)",
+        ]
+    },
+    maloclusion2:{
+        name:"Maloclusion Clase II",
+        image:"  ",
+        description:"Es la incorrecta alineación de los dientes,el paciente presenta una diferencia de tamaño entre mandíbulas o entre mandíbula y diente.Hay casos en la cual el maxilar superior es muy pequeño para alvergar todos los dientes en las cuales deben ir en este tren superior.",
+        advices:[
+            "Ortodoncia interceptiva (niños)",
+            "Ortodoncia Correctiva(adultos)",
+        ]
+    },
+    maloclusion3:{
+        name:"Maloclusion Clase III",
+        image:"  ",
+        description:"Es la incorrecta alineación de los dientes,el paciente presenta una diferencia de tamaño entre mandíbulas o entre mandíbula y diente.Hay casos en la cual el maxilar superior es muy pequeño para alvergar todos los dientes en las cuales deben ir en este tren superior.",
+        advices:[
+            "Ortodoncia interceptiva (niños)",
+            "Ortodoncia Correctiva(adultos)",
+        ]
+    },
+    periodontitis:{
+        name:"Periodontitis",
+        image:"  ",
+        description:"Es la incorrecta alineación de los dientes,el paciente presenta una diferencia de tamaño entre mandíbulas o entre mandíbula y diente.Hay casos en la cual el maxilar superior es muy pequeño para alvergar todos los dientes en las cuales deben ir en este tren superior.",
+        advices:[
+            "Ortodoncia interceptiva (niños)",
+            "Ortodoncia Correctiva(adultos)",
+        ]
+    },
+    periodontitisAvanzada:{
+        name:"Periodontitis Avanzada",
+        image:"  ",
+        description:"Es la incorrecta alineación de los dientes,el paciente presenta una diferencia de tamaño entre mandíbulas o entre mandíbula y diente.Hay casos en la cual el maxilar superior es muy pequeño para alvergar todos los dientes en las cuales deben ir en este tren superior.",
+        advices:[
+            "Ortodoncia interceptiva (niños)",
+            "Ortodoncia Correctiva(adultos)",
         ]
     }
 }

@@ -187,10 +187,10 @@ section .que_text{
 }
 
 section .image_question{
-    width: 70%;
-    height: 50%;
+    width: 350px;
+    height: 200px;
     display: block;
-    text-align: center;
+    object-fit: cover;
     margin: 10px auto;
 }
 

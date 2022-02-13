@@ -7,6 +7,9 @@ const Answers={
     low:"low",
     si:"si",
     no:"no",
+    clase1:"clase1",
+    clase2:"clase2",
+    clase3:"clase3"
 }
 
 let questions =[
@@ -73,7 +76,7 @@ let questions =[
     {
         numb: 4,
         code:"Dolor",
-        question: "¿Presenta usted algun tipo de dolor en su diente?",
+        question: "¿Presenta usted algun tipo de dolor en alguno de sus dientes?",
         image: "./images/preguntas/pregunta4.jpg",
         options: [
             {
@@ -138,6 +141,10 @@ let questions =[
             },
             {
                 mensaje:"Color Rojo",
+                value:Answers.moderate
+            },
+            {
+                mensaje:"Color Rojizo",
                 value:Answers.high
             },
         ]
@@ -163,6 +170,106 @@ let questions =[
         code:"MalAliento",
         question: "¿Ha presentado mal aliento durante los ultimos dias?",
         image: "./images/preguntas/pregunta9.jpg",
+        options: [
+            {
+                mensaje:"Si",
+                value:Answers.si
+            },
+            {
+                mensaje:"No",
+                value:Answers.no
+            },
+        ]
+    },
+    {
+        numb: 10,
+        code:"Mordida",
+        question: "Marque la alternativa que corresponda a su tipo de mordida",
+        image: "./images/preguntas/pregunta10.jpg",
+        options: [
+            {
+                mensaje:"Alternativa I",
+                value:Answers.clase1
+            },
+            {
+                mensaje:"Alternativa II",
+                value:Answers.clase2
+            },
+            {
+                mensaje:"Alternativa III",
+                value:Answers.clase3
+            },
+        ]
+    },
+    {
+        numb: 11,
+        code:"Apinados",
+        question: "¿Presenta usted dientes apiñados?",
+        image: "./images/preguntas/pregunta11.jpg",
+        options: [
+            {
+                mensaje:"Si",
+                value:Answers.si
+            },
+            {
+                mensaje:"No",
+                value:Answers.no
+            },
+        ]
+    },
+    {
+        numb: 12,
+        code:"DolorMasticar",
+        question: "¿Presenta usted dolor al momento de masticar sus alimentos?",
+        image: "./images/preguntas/pregunta12.jpg",
+        options: [
+            {
+                mensaje:"Si",
+                value:Answers.si
+            },
+            {
+                mensaje:"No",
+                value:Answers.no
+            },
+        ]
+    },
+    {
+        numb: 13,
+        code:"DolorMusculosFaciales",
+        question: "¿Presenta usted dolor en sus Musculos Faciales?",
+        image: "./images/preguntas/pregunta13.jpg",
+        options: [
+            {
+                mensaje:"Si",
+                value:Answers.si
+            },
+            {
+                mensaje:"No",
+                value:Answers.no
+            },
+        ]
+    },
+    {
+        numb: 14,
+        code:"Sarro",
+        question: "¿Ha encontrado presencia de sarro en sus dientes?",
+        image: "./images/preguntas/pregunta14.jpg",
+        options: [
+            {
+                mensaje:"Si",
+                value:Answers.si
+            },
+            {
+                mensaje:"No",
+                value:Answers.no
+            },
+        ]
+    },
+    {
+        numb: 15,
+        code:"MovilidadDental",
+        question: "¿Presenta usted Movilidad Dental?",
+        image: "./images/preguntas/pregunta15.jpg",
         options: [
             {
                 mensaje:"Si",
