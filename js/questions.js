@@ -20,7 +20,7 @@ let questions = [
 		image: './images/preguntas/pregunta1.jpg',
 		options: [
 			{
-				mensaje: 'Mas de 5 veces al año',
+				mensaje: 'Mas de 4 veces al año',
 				value: Answers.high,
 			},
 			{
@@ -28,7 +28,7 @@ let questions = [
 				value: Answers.moderate,
 			},
 			{
-				mensaje: 'Entre 0-1 veces al año',
+				mensaje: '1 vez al año',
 				value: Answers.low,
 			},
 		],
@@ -44,7 +44,7 @@ let questions = [
 				value: Answers.always,
 			},
 			{
-				mensaje: 'A veces',
+				mensaje: 'De vez en cuando',
 				value: Answers.sometimes,
 			},
 			{
@@ -76,7 +76,7 @@ let questions = [
 	{
 		numb: 4,
 		code: 'Dolor',
-		question: '¿Presenta usted algun tipo de dolor en alguno de sus dientes?',
+		question: '¿Presenta algun tipo de dolor en alguno de sus dientes?',
 		image: './images/preguntas/pregunta4.jpg',
 		options: [
 			{
@@ -120,11 +120,11 @@ let questions = [
 		image: './images/preguntas/pregunta6.jpg',
 		options: [
 			{
-				mensaje: 'Si, si lo uso',
+				mensaje: 'Si',
 				value: Answers.si,
 			},
 			{
-				mensaje: 'No, no lo uso',
+				mensaje: 'No',
 				value: Answers.no,
 			},
 		],
@@ -152,7 +152,7 @@ let questions = [
 	{
 		numb: 8,
 		code: 'CepillaSangre',
-		question: '¿Ha sangrado usted cuando se cepilla los dientes?',
+		question: '¿Ha sangrado cuando se cepilla los dientes?',
 		image: './images/preguntas/pregunta8.jpg',
 		options: [
 			{
@@ -220,7 +220,7 @@ let questions = [
 	{
 		numb: 12,
 		code: 'DolorMasticar',
-		question: '¿Presenta usted dolor al momento de masticar sus alimentos?',
+		question: '¿Tiene dolor al momento de masticar sus alimentos?',
 		image: './images/preguntas/pregunta12.jpg',
 		options: [
 			{
@@ -236,7 +236,7 @@ let questions = [
 	{
 		numb: 13,
 		code: 'DolorMusculosFaciales',
-		question: '¿Presenta usted dolor en sus Musculos Faciales?',
+		question: '¿Presenta usted dolor en sus musculos faciales?',
 		image: './images/preguntas/pregunta13.jpg',
 		options: [
 			{
@@ -268,7 +268,7 @@ let questions = [
 	{
 		numb: 15,
 		code: 'MovilidadDental',
-		question: '¿Presenta usted Movilidad Dental?',
+		question: '¿Presenta usted Movilidad Dental en alguna pieza dentaria?',
 		image: './images/preguntas/pregunta15.jpg',
 		options: [
 			{
@@ -277,6 +277,86 @@ let questions = [
 			},
 			{
 				mensaje: 'No',
+				value: Answers.no,
+			},
+		],
+	},
+	{
+		numb: 16,
+		code: 'Bolsa',
+		question: '¿Ha presentado la formación de una bolsa en una pieza dentaria o a su alrededor.?',
+		image: './images/preguntas/pregunta16.jpg',
+		options: [
+			{
+				mensaje: 'Si',
+				value: Answers.si,
+			},
+			{
+				mensaje: 'No',
+				value: Answers.no,
+			},
+		],
+	},
+	{
+		numb: 17,
+		code: 'Heridas',
+		question: '¿Ha tenido llagas en los labios/boca que demoran un largo tiempo en cicatrizar?',
+		image: './images/preguntas/pregunta17.jpg',
+		options: [
+			{
+				mensaje: 'Si',
+				value: Answers.si,
+			},
+			{
+				mensaje: 'No',
+				value: Answers.no,
+			},
+		],
+	},
+	{
+		numb: 18,
+		code: 'Fumador',
+		question: '¿Usted consume tabaco?',
+		image: './images/preguntas/pregunta18.jpg',
+		options: [
+			{
+				mensaje: 'Si',
+				value: Answers.si,
+			},
+			{
+				mensaje: 'No',
+				value: Answers.no,
+			},
+		],
+	},
+	{
+		numb: 19,
+		code: 'AdultoMayor',
+		question: '¿Tiene mas de 55 años(poblacion adulto mayor)?',
+		image: './images/preguntas/pregunta19.jpg',
+		options: [
+			{
+				mensaje: 'Si, tengo una edad mayor de 55',
+				value: Answers.si,
+			},
+			{
+				mensaje: 'No, soy una persona menor',
+				value: Answers.no,
+			},
+		],
+	},
+	{
+		numb: 20,
+		code: 'Enjuague',
+		question: '¿Utiliza el enjuague bucal durante su limpieza dental?',
+		image: './images/preguntas/pregunta20.jpg',
+		options: [
+			{
+				mensaje: 'Si,siempre lo utilizo',
+				value: Answers.si,
+			},
+			{
+				mensaje: 'No, no lo utilizo',
 				value: Answers.no,
 			},
 		],

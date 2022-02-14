@@ -38,6 +38,11 @@ let userAnswer = {
 	DolorMusculosFaciales: '',
 	Sarro: '',
 	MovilidadDental: '',
+	Bolsa: '',
+	Heridas: '',
+	Fumador: '',
+	AdultoMayor: '',
+	Enjuague: '',
 };
 //Creacion del Objeto que almacenara los resultados del diagnostico.
 let userDiagnostic = [];
@@ -284,14 +289,73 @@ const analize = () => {
 			diagnostico: enfermedades.periodontitis,
 		});
 
-	//------------------------------------------ ABSCESO -----------------------------------------------------------//
+	//--------------------------------------- ABSCESO DENTAL -------------------------------------------------------//
 	//Regla 14 -- Periodontitis Sintomas
+	if (userAnswer.Bolsa == Answers.si)
+		addDiagnostic({
+			categoria: 'absceso',
+			diagnostico: enfermedades.absceso,
+		});
 
 	//--------------------------------------- CANCER BUCAL --------------------------------------------------------//
+	//Regla 15 -- Diagnosticar Paciente Propenso de Cancer Bucal
+	if (userAnswer.Heridas == Answers.si && userAnswer.Fumador == Answers.si && userAnswer.AdultoMayor == Answers.si)
+		addDiagnostic({
+			categoria: 'cancer',
+			diagnostico: enfermedades.cancerBucal,
+		});
 
 	//--------------------------------------- BUENA SALUD DENTAL --------------------------------------------------//
+	//Regla 16 -- Excelentes Habitos 1
+	if (
+		userAnswer.Cepilla == Answers.high &&
+		userAnswer.HiloDental == Answers.si &&
+		userAnswer.Visitas == Answers.high &&
+		userAnswer.Azucarados == Answers.rarely &&
+		userAnswer.Enjuague == Answers.si
+	)
+		addDiagnostic({
+			categoria: 'salud',
+			diagnostico: enfermedades.saludBucalExcelente,
+		});
+	//Regla 17 -- Excelentes Habitos 2
+	if (
+		userAnswer.Cepilla == Answers.high &&
+		userAnswer.HiloDental == Answers.si &&
+		userAnswer.Visitas == Answers.moderate &&
+		userAnswer.Azucarados == Answers.rarely &&
+		userAnswer.Enjuague == Answers.si
+	)
+		addDiagnostic({
+			categoria: 'salud',
+			diagnostico: enfermedades.saludBucalExcelente,
+		});
+	//Regla 18 -- Buenos Habitos 1
+	if (
+		userAnswer.Cepilla == Answers.high &&
+		userAnswer.HiloDental == Answers.si &&
+		userAnswer.Visitas == Answers.high &&
+		userAnswer.Azucarados == Answers.rarely &&
+		userAnswer.Enjuague == Answers.no
+	)
+		addDiagnostic({
+			categoria: 'salud',
+			diagnostico: enfermedades.saludBucalBuena,
+		});
+	//Regla 19 -- Buenos Habitos 2
+	if (
+		userAnswer.Cepilla == Answers.high &&
+		userAnswer.HiloDental == Answers.si &&
+		userAnswer.Visitas == Answers.moderate &&
+		userAnswer.Azucarados == Answers.rarely &&
+		userAnswer.Enjuague == Answers.no
+	)
+		addDiagnostic({
+			categoria: 'salud',
+			diagnostico: enfermedades.saludBucalBuena,
+		});
 
 	//-------------------------------------- SIN RESULTADOS -------------------------------------------------------//
-	//Regla 25 (No se encontro ninguna enfermedad)
+	//Regla 20 (No se encontro ningun diagnostico)
 	if (userDiagnostic.length == 0) console.info('El programa no encontro una solucion');
 };
