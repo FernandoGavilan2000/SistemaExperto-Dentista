@@ -48,7 +48,7 @@ let userAnswer = {
 let userDiagnostic = [];
 //----------------------------------
 
-// Si le da click al empezar salir test
+// Si le da click al empezar test
 start_btn.onclick = () => {
 	info_box.classList.add('activeInfo'); //show info box
 };
@@ -111,7 +111,7 @@ const showResult = () => {
 	const cards = userDiagnostic.reduce((collection, resultado, index) => {
 		const advices = resultado.diagnostico.advices.reduce((previous, advice) => (previous = previous + `<p class="text-gray-600">-${advice}</p>`), '');
 
-		const card = `<div class="max-w-sm w-full lg:max-w-full lg:flex">
+		const card = `<div class="max-w-sm w-1/2 lg:max-w-full lg:flex">
         <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url(${
 					resultado.diagnostico.image
 				})" title="">
@@ -196,9 +196,15 @@ const addDiagnostic = (data) => {
 	if (userDiagnostic.length === 0) {
 		userDiagnostic = [...userDiagnostic, data];
 	} else {
+		let repeated = false;
 		userDiagnostic.forEach((element) => {
-			if (!(element.categoria == data.categoria)) userDiagnostic = [...userDiagnostic, data];
+			if (element.categoria == data.categoria) {
+				repeated = true;
+			}
 		});
+		if (!repeated) {
+			userDiagnostic = [...userDiagnostic, data];
+		}
 	}
 };
 
