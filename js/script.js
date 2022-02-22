@@ -216,8 +216,18 @@ const analize = () => {
 			categoria: 'caries',
 			diagnostico: enfermedades.cariesAvanzado,
 		});
+	if (userAnswer.Punto == Answers.high && userAnswer.Dolor == Answers.moderate)
+		addDiagnostic({
+			categoria: 'caries',
+			diagnostico: enfermedades.cariesAvanzado,
+		});
 	//Regla 2 -- Detectar Caries__Estadio_Inicial x Imagenes
 	if (userAnswer.Punto == Answers.moderate)
+		addDiagnostic({
+			categoria: 'caries',
+			diagnostico: enfermedades.cariesInicial,
+		});
+	if (userAnswer.Punto == Answers.moderate && userAnswer.Dolor == Answers.moderate)
 		addDiagnostic({
 			categoria: 'caries',
 			diagnostico: enfermedades.cariesInicial,
