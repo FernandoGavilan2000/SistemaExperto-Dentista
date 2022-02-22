@@ -211,7 +211,7 @@ const addDiagnostic = (data) => {
 const analize = () => {
 	//------------------------------------------ CARIES --------------------------------------------------------------//
 	//Regla 1 --  Detectar Caries__Estadio_Avanzado x Imagenes
-	if (userAnswer.Punto == Answers.high && userAnswer.Dolor.high == Answers.high)
+	if (userAnswer.Punto == Answers.high && userAnswer.Dolor == Answers.high)
 		addDiagnostic({
 			categoria: 'caries',
 			diagnostico: enfermedades.cariesAvanzado,
