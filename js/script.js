@@ -161,7 +161,7 @@ function optionSelected(answer) {
 //Obteniendo las preguntas y opciones del arreglo "questions" de questions.js
 function showQuestion(index) {
 	//Marcador avance barra
-	time_line.style.width = 4 + '0%';
+	time_line.style.width = 5 * (index + 1) + '%';
 	const question_text = document.querySelector('.que_text');
 	const question_image = document.querySelector('.image_question');
 
